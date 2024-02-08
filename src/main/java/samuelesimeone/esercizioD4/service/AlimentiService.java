@@ -14,11 +14,11 @@ import java.util.Optional;
 @Service
 @Slf4j
 public class AlimentiService {
-
     @Autowired
     private AlimentiDAO alimentiDAO;
-    public void save(Alimenti user){
-        alimentiDAO.save(user);
+
+    public void save(Alimenti alimenti){
+        alimentiDAO.save(alimenti);
         log.info("Utente Salvato");
     }
 
@@ -37,16 +37,11 @@ public class AlimentiService {
         return  alimentiDAO.findAll();
     }
 
+
     public void deleteUser(long id){
         Alimenti found = this.findById(id);
         alimentiDAO.delete(found);
     }
 
-    public List<Alimenti> findPizzaPriceLower(int price){
-        return alimentiDAO.findPizzaPriceLower(price);
-    }
 
-    public List<Alimenti> findByName(String name){
-        return alimentiDAO.findBevandaFromName(name);
-    }
 }

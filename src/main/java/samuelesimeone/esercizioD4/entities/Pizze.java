@@ -1,10 +1,7 @@
 package samuelesimeone.esercizioD4.entities;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -14,11 +11,6 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class Pizze extends Alimenti{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
-    private long id;
 
     @ManyToMany
     @JoinTable(
